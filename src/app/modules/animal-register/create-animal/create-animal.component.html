@@ -1,0 +1,56 @@
+
+  <div class="flex align-items-center justify-content-center mt-6">
+    <h2>Nuevo registro</h2>
+  </div>
+
+
+
+<div class="grid ">
+  <div class="col-6 col-offset-3">
+
+    <mat-card>
+      <mat-card-content>
+
+        <div class="grid">
+
+          <mat-form-field class="col-12">
+            <mat-label> Nombre </mat-label>
+            <input #txtNombreInput [(ngModel)]="animal.nombre" matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label> Reino </mat-label>
+            <input #txtReinoInput [(ngModel)]="animal.reino" matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label> Filo </mat-label>
+            <input #txtFiloInput [(ngModel)]="animal.filo" matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label> Clase </mat-label>
+            <input #txtClaseInput [(ngModel)]="animal.clase" matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label> Orden </mat-label>
+            <input #txtOrdenInput [(ngModel)]="animal.orden" matInput type="text">
+          </mat-form-field>
+
+        </div>
+
+
+        <div class="flex justify-content-center">
+          <button (click)="saveAnimal()" mat-flat-button color="primary">
+            <mat-icon>save</mat-icon>
+            Guardar
+          </button>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+</div>
