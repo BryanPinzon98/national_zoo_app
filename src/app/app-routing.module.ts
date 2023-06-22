@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'manager',
     loadChildren: () => import('./modules/manage-animals/manage-animals.module').then(m => m.ManageAnimalsModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'register'
   }
 ]
 
