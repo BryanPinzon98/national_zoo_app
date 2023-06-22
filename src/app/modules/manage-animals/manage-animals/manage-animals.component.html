@@ -3,31 +3,40 @@
 </div>
 
 
-
-<div class="grid ">
-  <div class="col-6 col-offset-3">
-
-    <mat-card>
-      <mat-card-content>
-
-        <ul class="list-group">
-
-          <li *ngFor="let animal of animalsList; let i = index;">
-            <div>
-              <span class="text-primary"> {{ i + 1 }}. </span>
-              <span> <strong> Nombre Animal: </strong> </span> <span> {{ animal.nombre }} | </span>
-              <span> <strong> Reino: </strong> </span> <span> {{ animal.reino }} | </span>
-              <span> <strong> Clase: </strong> </span> <span> {{ animal.clase }} | </span>
-            </div>
-
-            <!-- <button (click)="onDeleteByID(character.id)" class="btn btn-danger">X</button> -->
-          </li>
-
-        </ul>
-
-      </mat-card-content>
-    </mat-card>
-
-
-  </div>
+<div *ngIf="!animalsList; else cardAnimalsList" class="mt-6 alert alert-warning text-center">
+  No hay animales registrados
 </div>
+
+
+<ng-template #cardAnimalsList>
+
+  <div class="grid ">
+    <div class="col-6 col-offset-3">
+
+      <mat-card>
+        <mat-card-content>
+
+          <ul class="list-group">
+
+            <li *ngFor="let animal of animalsList; let i = index;">
+              <div>
+                <span class="text-primary"> {{ i + 1 }}. </span>
+                <span> <strong> Nombre Animal: </strong> </span> <span> {{ animal.nombre }} | </span>
+                <span> <strong> Reino: </strong> </span> <span> {{ animal.reino }} | </span>
+                <span> <strong> Clase: </strong> </span> <span> {{ animal.clase }} | </span>
+              </div>
+
+              <!-- <button (click)="onDeleteByID(character.id)" class="btn btn-danger">X</button> -->
+            </li>
+
+          </ul>
+
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+  </div>
+
+
+  </ng-template>
